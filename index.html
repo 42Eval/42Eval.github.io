@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-G8S3WWM89L"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G8S3WWM89L');
+  </script>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>42 Sheets Eval :D</title>
+<link href="assets/favicons/favicon_no-bg.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      --primary-color: #ec4899;
+      --primary-light: #ffffff;
+      --secondary-color: #a075e5;
+      --accent-color: #ec4899;
+      --text-primary: #f3f4f6;
+      --text-secondary: #d1d5db;
+      --bg-dark: #111827;
+      --bg-darker: #0f172a;
+      --bg-card: #1e293b;
+      --border-color: #334155;
+      --success-color: #22d3ee;
+      --warning-color: #080807;
+      --danger-color: #ef4444;
+      --border-radius: 12px;
+      --border-radius-lg: 16px;
+      --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .badge-danger {
+      background-color: rgba(239, 68, 68, 0.15);
+      color: #ef4444;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    .badge-danger:hover {
+      background-color: rgba(239, 68, 68, 0.25); 
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: transparent;
+      background: linear-gradient(to right, var(--primary-light), var(--primary-color));
+      -webkit-background-clip: text;
+      background-clip: text;
+      margin-bottom: 10px;
+      display: inline-block;
+      position: relative;
+      letter-spacing: 0.5px;
+    }
+
+    .logo::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(to right, var(--primary-light), var(--primary-color));
+      border-radius: 2px;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--box-shadow);
+      padding: 30px;
+      margin-bottom: 30px;
+      transition: var(--transition);
+      border: 1px solid var(--border-color);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+      border-color: var(--primary-light);
+    }
+
+    .card-header {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-title i {
+      color: var(--primary-light);
+    }
+
+    .card-body {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--bg-card);
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      background-color: var(--primary-color);
+      color: white;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      position: sticky;
+      top: 0;
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba(124, 58, 237, 0.05);
+    }
+
+    tr:hover {
+      background-color: rgba(124, 58, 237, 0.1);
+    }
+
+    a {
+      color: var(--primary-light);
+      text-decoration: none;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+
+    a:hover {
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-right: 8px;
+      gap: 4px;
+      transition: var(--transition);
+    }
+
+    .badge-web {
+      background-color: rgba(34, 211, 238, 0.15);
+      color: var(--success-color);
+      border: 1px solid rgba(34, 211, 238, 0.3);
+    }
+
+    .badge-web:hover {
+      background-color: rgba(34, 211, 238, 0.25);
+    }
+
+    .badge-us {
+      background-color: rgba(123, 237, 100, 0.15);
+      color: #7bed64;
+      border: 1px solid rgba(123, 237, 100, 0.3);
+    }
+
+    .badge-us:hover {
+      background-color: rgba(123, 237, 100, 0.25);
+    }
+
+    .floating-btn-home {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--primary-color);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
+      transition: var(--transition);
+      z-index: 100;
+      border: none;
+      outline: none;
+    }
+
+    .floating-btn-home:hover {
+      background: var(--primary-light);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(124, 58, 237, 0.5);
+    }
+
+    .floating-btn-home i {
+      font-size: 1.5rem;
+    }
+
+    /* GitHub Follow Button */
+    .github-follow {
+      display: inline-flex;
+      align-items: center;
+      background-color: var(--bg-card);
+      color: var(--text-primary);
+      padding: 8px 16px;
+      border-radius: var(--border-radius);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      margin-left: 10px;
+      border: 1px solid var(--border-color);
+      gap: 8px;
+    }
+
+    .github-follow:hover {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+
+    .follower-count {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.8em;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-content {
+      background-color: var(--bg-card);
+      margin: 5% auto;
+      padding: 30px;
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--box-shadow);
+      max-width: 800px;
+      width: 90%;
+      position: relative;
+      animation: modalFadeIn 0.3s ease;
+      border: 1px solid var(--border-color);
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: var(--transition);
+      background: none;
+      border: none;
+    }
+
+    .close:hover {
+      color: var(--accent-color);
+      transform: rotate(90deg);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .search-container {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 14px 20px 14px 45px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      transition: var(--transition);
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.3);
+    }
+
+    .search-container::before {
+      content: '\f002';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-secondary);
+      z-index: 1;
+    }
+
+    .filter-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 10px 18px;
+      border: none;
+      border-radius: var(--border-radius);
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .filter-btn i {
+      font-size: 0.9em;
+    }
+
+    .filter-btn.active {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .filter-btn:hover {
+      background-color: var(--border-color);
+    }
+
+    .filter-btn.active:hover {
+      background-color: var(--primary-light);
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-dark);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-light);
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .card {
+        padding: 20px;
+      }
+      
+      th, td {
+        padding: 12px;
+      }
+      
+      .logo {
+        font-size: 2rem;
+      }
+      
+      .subtitle {
+        font-size: 1rem;
+      }
+
+      .filter-buttons {
+        gap: 8px;
+      }
+
+      .filter-btn {
+        padding: 8px 14px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      body {
+        padding: 15px;
+      }
+      
+      .container {
+        padding: 15px;
+      }
+      
+      .card {
+        padding: 18px;
+      }
+      
+      .card-title {
+        font-size: 1.3rem;
+      }
+
+      .github-follow {
+        margin-left: 0;
+        margin-top: 10px;
+        display: inline-flex;
+      }
+
+      .footer p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* Animation for table rows */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    tbody tr {
+      animation: fadeIn 0.3s ease forwards;
+      opacity: 0;
+    }
+
+    tbody tr:nth-child(1) { animation-delay: 0.1s; }
+    tbody tr:nth-child(2) { animation-delay: 0.2s; }
+    tbody tr:nth-child(3) { animation-delay: 0.3s; }
+    tbody tr:nth-child(4) { animation-delay: 0.4s; }
+    tbody tr:nth-child(5) { animation-delay: 0.5s; }
+    tbody tr:nth-child(n+6) { animation-delay: 0.6s; }
+  </style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1 class="logo">42 Evaluation Sheets</h1>
+<p class="subtitle">Your comprehensive guide to 42 school projects with evaluation sheets in web format</p>
+</header>
+<div class="card">
+<div class="card-header">
+<h2 class="card-title"><i class="fas fa-clipboard-check"></i> Evaluation Status</h2>
+</div>
+<div class="card-body">
+<div class="search-container">
+<input class="search-input" id="searchInput" placeholder="Search projects..." type="text"/>
+</div>
+<div class="filter-buttons">
+<button class="filter-btn active" data-filter="all">
+<i class="fas fa-layer-group"></i> All Projects
+          </button>
+<button class="filter-btn" data-filter="c">
+<i class="fab fa-cuttlefish"></i> C Projects
+          </button>
+<button class="filter-btn" data-filter="cpp">
+<i class="fas fa-plus"></i> C++ Projects
+          </button>
+<button class="filter-btn" data-filter="web">
+<i class="fas fa-globe"></i> Web Projects
+          </button>
+</div>
+<table id="projectsTable">
+<thead>
+<tr>
+<th>Project</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr data-category="c">
+<td><a href="Cursus/Libft/index.html"><i class="fas fa-file-code"></i> Libft</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i>Updated</span></td>
+</tr>
+<tr data-category="c">
+<td><a href="Cursus/Ft_printf/index.html"><i class="fas fa-file-code"></i> ft_printf</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i>Updated</span></td>
+</tr>
+<tr data-category="c">
+<td><a href="Cursus/Get_next_line/index.html"><i class="fas fa-file-code"></i> get_next_line</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i>Updated</span></td>
+</tr>
+<tr data-category="sysadmin">
+<td><a href="Cursus/Born2beroot/index.html"><i class="fas fa-server"></i> Born2beroot</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i>Updated</span></td>
+</tr>
+<tr data-category="c">
+<td><a href="Cursus/Push_swap/index.html"><i class="fas fa-sort-numeric-down"></i> push_swap</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i>Updated</span></td>
+</tr>
+<tr data-category="graphics">
+<td><a href="Cursus/So_long/index.html"><i class="fas fa-gamepad"></i> so_long</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i>Updated</span></td>
+</tr>
+<tr data-category="graphics">
+<td><a href="Cursus/Fract-ol/index.html"><i class="fas fa-project-diagram"></i> fract-ol</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i>Updated</span></td>
+</tr>
+<tr data-category="graphics">
+<td><a href="Cursus/FdF/index.html"><i class="fas fa-mountain"></i> FdF</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i>Updated</span></td>
+</tr>
+<tr data-category="c">
+<td><a href="Cursus/Pipex/index.html"><i class="fas fa-code-branch"></i> pipex</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i>Updated</span></td>
+</tr>
+<tr data-category="c">
+<td><a href="Cursus/Minitalk/index.html"><i class="fas fa-comments"></i> minitalk</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i>Updated</span></td>
+</tr>
+<tr data-category="c">
+<td><a href="Cursus/Minishell/index.html"><i class="fas fa-terminal"></i> minishell</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i>Updated</span></td>
+</tr>
+<tr data-category="c">
+<td><a href="Cursus/Philosophers/index.html"><i class="fas fa-utensils"></i> Philosophers</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i>Updated</span></td>
+</tr>
+<tr data-category="networking">
+<td><a href="Cursus/NetPractice/index.html"><i class="fas fa-network-wired"></i> netpractice</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i>Updated</span></td>
+</tr>
+<tr data-category="cpp">
+<td><a href="index.html" onclick="showCPPModal(event)"><i class="fas fa-layer-group"></i> C++ Modules (00-09)</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i>Updated</span></td>
+</tr>
+<tr data-category="graphics">
+<td><a href="Cursus/Cub3d/index.html"><i class="fas fa-cube"></i> cub3d</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i>Updated</span></td>
+</tr>
+<tr data-category="graphics">
+<td><a href="Cursus/MiniRT/index.html"><i class="fas fa-shapes"></i> miniRT</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i>Updated</span></td>
+</tr>
+<tr data-category="sysadmin">
+<td><a href="Cursus/Inception/index.html"><i class="fas fa-docker"></i> Inception</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i>Updated</span></td>
+</tr>
+<tr data-category="web">
+<td><a href="Cursus/Webserv/index.html"><i class="fas fa-globe"></i> webserv</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i>Updated</span></td>
+</tr>
+<tr data-category="web">
+<td><a href="Cursus/Ft_irc/index.html"><i class="fas fa-comment-dots"></i> ft_irc</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i>Updated</span></td>
+</tr>
+<tr data-category="web">
+<td><a href="Cursus/Ft_transcendence/index.html"><i class="fas fa-gamepad"></i> ft_transcendence</a></td>
+<td><span class="badge badge-danger"><i class="fas fa-flag"></i> Out of update</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="modal" id="CPPModal">
+<div class="modal-content">
+<span class="close">×</span>
+<h2><i class="fas fa-cubes"></i> C++ Modules</h2>
+<p>&lt; All C++ modules from 00 to 09 &gt;</p>
+<table>
+<thead>
+<tr>
+<th>Project</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Cursus/CPP00/index.html"><i class="fas fa-cube"></i> CPP00</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i> 100</span> <span class="badge badge-web"><i class="fas fa-globe"></i> 125</span></td>
+</tr>
+<tr>
+<td><a href="Cursus/CPP01/index.html"><i class="fas fa-cubes"></i> CPP01</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i> 100</span> <span class="badge badge-web"><i class="fas fa-globe"></i> 125</span></td>
+</tr>
+<tr>
+<td><a href="Cursus/CPP02/index.html"><i class="fas fa-chess"></i> CPP02</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i> 100</span> <span class="badge badge-web"><i class="fas fa-globe"></i> 125</span></td>
+</tr>
+<tr>
+<td><a href="Cursus/CPP03/index.html"><i class="fas fa-atom"></i> CPP03</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i> 100</span> <span class="badge badge-web"><i class="fas fa-globe"></i> 125</span></td>
+</tr>
+<tr>
+<td><a href="Cursus/CPP04/index.html"><i class="fas fa-archive"></i> CPP04</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i> 100</span> <span class="badge badge-web"><i class="fas fa-globe"></i> 125</span></td>
+</tr>
+<tr>
+<td><a href="Cursus/CPP05/index.html"><i class="fas fa-bolt"></i> CPP05</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i> 100</span> <span class="badge badge-web"><i class="fas fa-globe"></i> 125</span></td>
+</tr>
+<tr>
+<td><a href="Cursus/CPP06/index.html"><i class="fas fa-random"></i> CPP06</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i> 100</span> <span class="badge badge-web"><i class="fas fa-globe"></i> 125</span></td>
+</tr>
+<tr>
+<td><a href="Cursus/CPP07/index.html"><i class="fas fa-boxes"></i> CPP07</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i> 100</span> <span class="badge badge-web"><i class="fas fa-globe"></i> 125</span></td>
+</tr>
+<tr>
+<td><a href="Cursus/CPP08/index.html"><i class="fas fa-chess-board"></i> CPP08</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i> 100</span> <span class="badge badge-web"><i class="fas fa-globe"></i> 125</span></td>
+</tr>
+<tr>
+<td><a href="Cursus/CPP09/index.html"><i class="fas fa-rocket"></i> CPP09</a></td>
+<td><span class="badge badge-us"><i class="fas fa-flag"></i> 100</span> <span class="badge badge-web"><i class="fas fa-globe"></i> 125</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="footer">
+<p>💡 Original Creator: 
+        <a href="https://github.com/42Eval" target="_blank"><i class="fab fa-github"></i> anonymous</a>
+</p>
+<p>🎨 Designed with ❤️ for 42 Abu Dhabi students</p>
+</div>
+</div>
+<a class="floating-btn-home" href="index.html">
+<i class="fas fa-home"></i>
+</a>
+<script>
+    // Search functionality
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+      const input = this.value.toLowerCase();
+      const rows = document.querySelectorAll('#projectsTable tbody tr');
+      
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(input) ? '' : 'none';
+      });
+    });
+
+    // Filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        const filter = this.getAttribute('data-filter');
+        const rows = document.querySelectorAll('#projectsTable tbody tr');
+        
+        rows.forEach(row => {
+          if (filter === 'all') {
+            row.style.display = '';
+          } else {
+            const category = row.getAttribute('data-category');
+            row.style.display = category === filter ? '' : 'none';
+          }
+        });
+      });
+    });
+
+    // Modal functionality
+    function showCPPModal(event) {
+      event.preventDefault();
+      const modal = document.getElementById("CPPModal");
+      modal.style.display = "block";
+      
+      // Animation
+      modal.animate([
+        { opacity: 0 },
+        { opacity: 1 }
+      ], {
+        duration: 200,
+        easing: 'ease-out'
+      });
+
+      // Close modal when clicking on X
+      const span = document.getElementsByClassName("close")[0];
+      span.onclick = function() {
+        modal.animate([
+          { opacity: 1 },
+          { opacity: 0 }
+        ], {
+          duration: 200,
+          easing: 'ease-in'
+        }).onfinish = function() {
+          modal.style.display = "none";
+        };
+      }
+
+      // Close modal when clicking outside
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.animate([
+            { opacity: 1 },
+            { opacity: 0 }
+          ], {
+            duration: 200,
+            easing: 'ease-in'
+          }).onfinish = function() {
+            modal.style.display = "none";
+          };
+        }
+      }
+
+      // Close modal with ESC key
+      document.onkeydown = function(evt) {
+        evt = evt || window.event;
+        if (evt.key === "Escape" || evt.key === "Esc") {
+          modal.animate([
+            { opacity: 1 },
+            { opacity: 0 }
+          ], {
+            duration: 200,
+            easing: 'ease-in'
+          }).onfinish = function() {
+            modal.style.display = "none";
+          };
+        }
+      };
+    }
+
+    // GitHub Follower Count
+
+    // Call the function when the page loads
+    document.addEventListener('DOMContentLoaded', fetchGitHubFollowers);
+
+    // Add smooth scroll to top for home button
+    document.querySelector('.floating-btn-home').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
