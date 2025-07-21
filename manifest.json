@@ -1,0 +1,68 @@
+{
+	"short_name": "42Evals",
+	"name": "42 Evaluation Sheets Hub",
+	"description": "Comprehensive access to 42 school evaluation sheets for students and peers",
+	"icons": [
+	  {
+		"src": "./assets/favicons/favicon-192x192.png",
+		"type": "image/png",
+		"sizes": "192x192",
+		"purpose": "any maskable"
+	  },
+	  {
+		"src": "./assets/favicons/favicon-512x512.png",
+		"type": "image/png",
+		"sizes": "512x512",
+		"purpose": "any maskable"
+	  },
+	  {
+		"src": "./assets/favicons/favicon-512x512.png",
+		"type": "image/png",
+		"sizes": "512x512",
+		"purpose": "maskable"
+	  }
+	],
+	"start_url": "./index.html",
+	"background_color": "#24292E",
+	"display": "standalone",
+	"scope": "/",
+	"theme_color": "#4361ee",
+	"orientation": "portrait-primary",
+	"categories": ["education", "productivity"],
+	"screenshots": [
+	  {
+		"src": "./assets/screenshots/light.png",
+		"type": "image/png",
+		"sizes": "1280x800"
+	  },
+	  {
+		"src": "./assets/screenshots/dark.png",
+		"type": "image/png",
+		"sizes": "1280x800"
+	  }
+	],
+	"shortcuts": [
+	  {
+		"name": "Latest Evaluations",
+		"short_name": "New",
+		"description": "View recently updated evaluation sheets",
+		"url": "./?filter=new"
+	  },
+	  {
+		"name": "Popular Projects",
+		"short_name": "Popular",
+		"description": "Browse most viewed evaluation sheets",
+		"url": "./?filter=popular"
+	  }
+	],
+	"related_applications": [
+	  {
+		"platform": "web",
+		"url": "https://yourdomain.com"
+	  }
+	],
+	"prefer_related_applications": false,
+	"launch_handler": {
+	  "client_mode": "auto"
+	}
+  }
